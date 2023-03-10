@@ -1,4 +1,4 @@
-package com.ead.authuser.services.services.impl;
+package com.ead.authuser.services.impl;
 
 import com.ead.authuser.models.UserModel;
 import com.ead.authuser.repositories.UserRepository;
@@ -12,6 +12,7 @@ import java.util.UUID;
 @Service
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
@@ -20,6 +21,7 @@ public class UserServiceImpl implements UserService {
     public List<UserModel> findAll() {
         return userRepository.findAll();
     }
+
     @Override
     public Optional<UserModel> findById(UUID userUuid) {
         return userRepository.findById(userUuid);
